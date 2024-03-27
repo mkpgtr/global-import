@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  console.log(count)
 
   return (
     <>
@@ -14,14 +14,16 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => {
-          if (window.toast) {
-          toast.success('Notification message');
-          } else {
-            console.error('toast is not defined');
-          }
-        })}>
+        <button onClick={() =>{
+           setCount((count)=>{
+          
+            return count + 1
+          })
+
+          toast.success('count increased by 1')
+        }}>
           count is {count}
+          
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
